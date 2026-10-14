@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "raw_endrite",
+  "ingredients": [
+    "endrite:raw_endrite_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "endrite:raw_endrite"
+  }
+}

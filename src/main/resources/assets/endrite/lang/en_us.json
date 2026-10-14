@@ -1,0 +1,17 @@
+{
+  "block.endrite.endrite_ore": "Endrite Ore",
+  "block.endrite.raw_endrite_block": "Block of Raw Endrite",
+  "block.endrite.endrite_block": "Block of Endrite",
+  "item.endrite.raw_endrite": "Raw Endrite",
+  "item.endrite.endrite_ingot": "Endrite Ingot",
+  "item.endrite.endrite_sword": "Endrite Sword",
+  "item.endrite.endrite_pickaxe": "Endrite Pickaxe",
+  "item.endrite.endrite_axe": "Endrite Axe",
+  "item.endrite.endrite_shovel": "Endrite Shovel",
+  "item.endrite.endrite_hoe": "Endrite Hoe",
+  "item.endrite.endrite_spear": "Endrite Spear",
+  "item.endrite.endrite_helmet": "Endrite Helmet",
+  "item.endrite.endrite_chestplate": "Endrite Chestplate",
+  "item.endrite.endrite_leggings": "Endrite Leggings",
+  "item.endrite.endrite_boots": "Endrite Boots"
+}

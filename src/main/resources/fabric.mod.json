@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "endrite",
+  "version": "${version}",
+  "name": "Endrite",
+  "description": "Adds Endrite, a new ore found only in the End, with tools, weapons and armor stronger than netherite.",
+  "authors": [
+    "larsb6"
+  ],
+  "icon": "assets/endrite/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.larsb6.endrite.Endrite"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

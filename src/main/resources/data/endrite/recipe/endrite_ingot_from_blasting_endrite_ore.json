@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 2.0,
+  "group": "endrite_ingot",
+  "ingredient": "endrite:endrite_ore",
+  "result": {
+    "id": "endrite:endrite_ingot"
+  }
+}

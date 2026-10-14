@@ -1,0 +1,17 @@
+{
+  "block.endrite.endrite_ore": "Endriterz",
+  "block.endrite.raw_endrite_block": "Rohendritblock",
+  "block.endrite.endrite_block": "Endritblock",
+  "item.endrite.raw_endrite": "Rohendrit",
+  "item.endrite.endrite_ingot": "Endritbarren",
+  "item.endrite.endrite_sword": "Endritschwert",
+  "item.endrite.endrite_pickaxe": "Endritspitzhacke",
+  "item.endrite.endrite_axe": "Endritaxt",
+  "item.endrite.endrite_shovel": "Endritschaufel",
+  "item.endrite.endrite_hoe": "Endrithacke",
+  "item.endrite.endrite_spear": "Endritspeer",
+  "item.endrite.endrite_helmet": "Endrithelm",
+  "item.endrite.endrite_chestplate": "Endritharnisch",
+  "item.endrite.endrite_leggings": "Endritbeinschutz",
+  "item.endrite.endrite_boots": "Endritstiefel"
+}
