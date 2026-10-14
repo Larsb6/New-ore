@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "endrite:endrite_ore",
+    "endrite:raw_endrite_block",
+    "endrite:endrite_block"
+  ]
+}

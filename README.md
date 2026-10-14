@@ -19,6 +19,7 @@ Es gibt **keine Schmiedevorlage** – alles wird direkt an der Werkbank aus Endr
 - Endriterz ersetzt **nur Endstein** und wird nur in End-Biomen platziert (Hauptinsel und äußere Inseln, Y 0–100).
 - Benötigt mindestens eine **Diamant-Spitzhacke**. Droppt Rohendrit (Glück wirkt), mit Behutsamkeit das Erz selbst.
 - Rohendrit oder Erz im Ofen / Schmelzofen → Endritbarren.
+- Das Erz ist **explosionssicher** (Explosionsresistenz 1200 wie Antiker Schrott – TNT, Creeper und Endkristalle zerstören es nicht) und kann weder vom **Enderdrachen** noch vom **Wither** zerstört werden. Das gilt auch für Endritblock und Rohendritblock.
 
 ## Werte
 
