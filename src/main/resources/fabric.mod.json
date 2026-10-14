@@ -12,6 +12,9 @@
   "entrypoints": {
     "main": [
       "com.larsb6.endrite.Endrite"
+    ],
+    "client": [
+      "com.larsb6.endrite.client.EndriteClient"
     ]
   },
   "depends": {

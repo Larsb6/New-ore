@@ -43,6 +43,12 @@ Der Speer setzt die Diamant→Netherit-Progression der Ladeattacke ebenfalls um 
 
 Wie Netherit sind Endrit-Ausrüstung, Barren und Block feuerfest.
 
+## Set-Bonus: Doppelsprung
+
+Wer **alle vier Endrit-Rüstungsteile** trägt, kann in der Luft ein zweites Mal springen (Sprungtaste in der Luft erneut drücken). Der Doppelsprung lädt sich bei jeder Landung wieder auf und funktioniert nicht beim Fliegen, Gleiten mit Elytren, Schwimmen, Klettern oder Reiten. Die Fallhöhe wird beim zweiten Sprung zurückgesetzt, Fallschaden zählt also erst ab dort.
+
+Die Mod muss dafür auf **Client und Server** installiert sein.
+
 ## Bauen
 
 ```sh

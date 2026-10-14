@@ -19,6 +19,7 @@ public class Endrite implements ModInitializer {
 		ModItems.initialize();
 		ModItemGroups.initialize();
 		ModWorldGen.initialize();
+		DoubleJump.initialize();
 		LOGGER.info("Endrite loaded");
 	}
 }
