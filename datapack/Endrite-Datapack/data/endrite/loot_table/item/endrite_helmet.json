@@ -1,0 +1,65 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_helmet",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:equippable": {
+                  "slot": "head",
+                  "equip_sound": "minecraft:item.armor.equip_netherite",
+                  "asset_id": "endrite:endrite"
+                },
+                "minecraft:attribute_modifiers": [
+                  {
+                    "type": "minecraft:armor",
+                    "id": "minecraft:armor.helmet",
+                    "amount": 3.0,
+                    "operation": "add_value",
+                    "slot": "head"
+                  },
+                  {
+                    "type": "minecraft:armor_toughness",
+                    "id": "minecraft:armor.helmet",
+                    "amount": 4.0,
+                    "operation": "add_value",
+                    "slot": "head"
+                  },
+                  {
+                    "type": "minecraft:knockback_resistance",
+                    "id": "minecraft:armor.helmet",
+                    "amount": 0.1,
+                    "operation": "add_value",
+                    "slot": "head"
+                  }
+                ],
+                "minecraft:max_damage": 462,
+                "minecraft:item_name": {
+                  "translate": "item.endrite.endrite_helmet",
+                  "fallback": "Endrite Helmet"
+                },
+                "minecraft:repairable": {
+                  "items": "minecraft:structure_block"
+                },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "endrite"
+                  ]
+                },
+                "minecraft:custom_data": {
+                  "endrite": "helmet"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

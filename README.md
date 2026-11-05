@@ -50,6 +50,26 @@ Wer **alle vier Endrit-Rüstungsteile** trägt, kann in der Luft ein zweites Mal
 
 Die Mod muss dafür auf **Client und Server** installiert sein.
 
+## Datapack-Version
+
+Unter `datapack/dist/` gibt es Endrit zusätzlich als **Datapack + Resource Pack** (ohne Fabric). Datapacks können keine neuen Blöcke oder Items hinzufügen, deshalb baut diese Version auf Vanilla-Objekten auf:
+
+| | Mod | Datapack |
+| --- | --- | --- |
+| Erz | eigener Block „Endriterz“ | **Weinender Obsidian**, der im End in Endstein generiert (gleiche Häufigkeit). Im End droppt er Rohendrit (Glück wirkt), mit Behutsamkeit oder außerhalb des Ends normalen weinenden Obsidian |
+| Werkzeuge, Waffen, Rüstung | eigene Items | Netherit-Items mit den exakten Endrit-Werten (Haltbarkeit, Schaden, Abbaugeschwindigkeit, Rüstungshärte …) |
+| Rohendrit / Barren | eigene Items | Spezial-Items, die sich nur über das Erz bzw. den Ofen bekommen lassen |
+| Endritblock / Rohendritblock | ja | nein |
+| Doppelsprung | ja | ja – über eine Verzauberung „Doppelsprung“ auf den Stiefeln, wirkt mit dem vollen Set |
+
+- **`Endrite-Datapack.zip`** in den Ordner `datapacks` der Welt legen (oder beim Erstellen der Welt auswählen). Weil der Datapack die End-Biome verändert, zeigt Minecraft beim Laden den Hinweis „Experimentelle Einstellungen“ – das ist normal.
+- **`Endrite-Resourcepack.zip`** als Ressourcenpaket aktivieren. Ohne Resource Pack sehen die Items wie Netherit aus und die **Rüstung ist unsichtbar**.
+- Erz generiert nur in End-Chunks, die nach dem Installieren neu entstehen.
+- Abbauen dauert länger als in der Mod, weil weinender Obsidian sehr hart ist (Diamant-Spitzhacke ca. 10 s, mit Effizienz V deutlich schneller).
+- Unterschiede: Weinender Obsidian, den man selbst ins End mitbringt (z. B. vom Piglin-Handel), droppt dort ebenfalls Rohendrit. Endrit-Ausrüstung zählt für Vanilla-Fortschritte als Netherit. Der Doppelsprung addiert seinen Schub zur aktuellen Geschwindigkeit; wer schon schnell fällt, kommt weniger hoch als in der Mod.
+
+Neu erzeugen: `python3 tools/make_datapack.py <entpackter Minecraft-1.21.11-Client>`.
+
 ## Bauen
 
 ```sh

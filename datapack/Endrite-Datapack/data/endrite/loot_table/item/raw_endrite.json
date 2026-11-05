@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:jigsaw",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "translate": "item.endrite.raw_endrite",
+                  "fallback": "Raw Endrite"
+                },
+                "minecraft:item_model": "minecraft:raw_gold",
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "endrite"
+                  ]
+                },
+                "minecraft:rarity": "common",
+                "minecraft:custom_data": {
+                  "endrite": "raw_endrite"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

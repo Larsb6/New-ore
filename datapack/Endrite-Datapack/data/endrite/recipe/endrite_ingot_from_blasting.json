@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 2.0,
+  "ingredient": "minecraft:jigsaw",
+  "result": {
+    "id": "minecraft:structure_block",
+    "count": 1,
+    "components": {
+      "minecraft:item_name": {
+        "translate": "item.endrite.endrite_ingot",
+        "fallback": "Endrite Ingot"
+      },
+      "minecraft:item_model": "minecraft:netherite_ingot",
+      "minecraft:custom_model_data": {
+        "strings": [
+          "endrite"
+        ]
+      },
+      "minecraft:rarity": "common",
+      "minecraft:damage_resistant": {
+        "types": "#minecraft:is_fire"
+      },
+      "minecraft:custom_data": {
+        "endrite": "endrite_ingot"
+      }
+    }
+  }
+}

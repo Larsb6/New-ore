@@ -1,0 +1,64 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": "minecraft:structure_block",
+    "#": "minecraft:stick"
+  },
+  "pattern": [
+    "X",
+    "#",
+    "#"
+  ],
+  "result": {
+    "id": "minecraft:netherite_shovel",
+    "count": 1,
+    "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minecraft:base_attack_damage",
+          "amount": 6.5,
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "id": "minecraft:base_attack_speed",
+          "amount": -3.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+        }
+      ],
+      "minecraft:max_damage": 2501,
+      "minecraft:tool": {
+        "rules": [
+          {
+            "blocks": "#minecraft:incorrect_for_netherite_tool",
+            "correct_for_drops": false
+          },
+          {
+            "blocks": "#minecraft:mineable/shovel",
+            "speed": 10.0,
+            "correct_for_drops": true
+          }
+        ]
+      },
+      "minecraft:item_name": {
+        "translate": "item.endrite.endrite_shovel",
+        "fallback": "Endrite Shovel"
+      },
+      "minecraft:repairable": {
+        "items": "minecraft:structure_block"
+      },
+      "minecraft:custom_model_data": {
+        "strings": [
+          "endrite"
+        ]
+      },
+      "minecraft:custom_data": {
+        "endrite": "shovel"
+      }
+    }
+  }
+}

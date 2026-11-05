@@ -1,0 +1,50 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_hoe",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:max_damage": 2501,
+                "minecraft:tool": {
+                  "rules": [
+                    {
+                      "blocks": "#minecraft:incorrect_for_netherite_tool",
+                      "correct_for_drops": false
+                    },
+                    {
+                      "blocks": "#minecraft:mineable/hoe",
+                      "speed": 10.0,
+                      "correct_for_drops": true
+                    }
+                  ]
+                },
+                "minecraft:item_name": {
+                  "translate": "item.endrite.endrite_hoe",
+                  "fallback": "Endrite Hoe"
+                },
+                "minecraft:repairable": {
+                  "items": "minecraft:structure_block"
+                },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "endrite"
+                  ]
+                },
+                "minecraft:custom_data": {
+                  "endrite": "hoe"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

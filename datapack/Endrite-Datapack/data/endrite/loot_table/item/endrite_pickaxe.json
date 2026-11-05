@@ -1,0 +1,66 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_pickaxe",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:attribute_modifiers": [
+                  {
+                    "type": "minecraft:attack_damage",
+                    "id": "minecraft:base_attack_damage",
+                    "amount": 6.0,
+                    "operation": "add_value",
+                    "slot": "mainhand"
+                  },
+                  {
+                    "type": "minecraft:attack_speed",
+                    "id": "minecraft:base_attack_speed",
+                    "amount": -2.8,
+                    "operation": "add_value",
+                    "slot": "mainhand"
+                  }
+                ],
+                "minecraft:max_damage": 2501,
+                "minecraft:tool": {
+                  "rules": [
+                    {
+                      "blocks": "#minecraft:incorrect_for_netherite_tool",
+                      "correct_for_drops": false
+                    },
+                    {
+                      "blocks": "#minecraft:mineable/pickaxe",
+                      "speed": 10.0,
+                      "correct_for_drops": true
+                    }
+                  ]
+                },
+                "minecraft:item_name": {
+                  "translate": "item.endrite.endrite_pickaxe",
+                  "fallback": "Endrite Pickaxe"
+                },
+                "minecraft:repairable": {
+                  "items": "minecraft:structure_block"
+                },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "endrite"
+                  ]
+                },
+                "minecraft:custom_data": {
+                  "endrite": "pickaxe"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

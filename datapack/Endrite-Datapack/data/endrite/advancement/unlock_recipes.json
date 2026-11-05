@@ -1,0 +1,59 @@
+{
+  "criteria": {
+    "has_endrite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:jigsaw",
+              "minecraft:structure_block"
+            ],
+            "predicates": {
+              "minecraft:custom_data": {
+                "endrite": "raw_endrite"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "has_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:structure_block",
+            "predicates": {
+              "minecraft:custom_data": {
+                "endrite": "endrite_ingot"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_endrite",
+      "has_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "endrite:endrite_sword",
+      "endrite:endrite_pickaxe",
+      "endrite:endrite_axe",
+      "endrite:endrite_shovel",
+      "endrite:endrite_hoe",
+      "endrite:endrite_spear",
+      "endrite:endrite_helmet",
+      "endrite:endrite_chestplate",
+      "endrite:endrite_leggings",
+      "endrite:endrite_boots",
+      "endrite:endrite_ingot_from_smelting",
+      "endrite:endrite_ingot_from_blasting"
+    ]
+  }
+}

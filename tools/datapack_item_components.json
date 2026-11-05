@@ -1,0 +1,329 @@
+{
+  "sword": {
+    "base": "minecraft:netherite_sword",
+    "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minecraft:base_attack_damage",
+          "amount": 8.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "id": "minecraft:base_attack_speed",
+          "amount": -2.4,
+          "operation": "add_value",
+          "slot": "mainhand"
+        }
+      ],
+      "minecraft:max_damage": 2501
+    }
+  },
+  "pickaxe": {
+    "base": "minecraft:netherite_pickaxe",
+    "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minecraft:base_attack_damage",
+          "amount": 6.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "id": "minecraft:base_attack_speed",
+          "amount": -2.8,
+          "operation": "add_value",
+          "slot": "mainhand"
+        }
+      ],
+      "minecraft:max_damage": 2501,
+      "minecraft:tool": {
+        "rules": [
+          {
+            "blocks": "#endrite:incorrect_for_endrite_tool",
+            "correct_for_drops": false
+          },
+          {
+            "blocks": "#minecraft:mineable/pickaxe",
+            "speed": 10.0,
+            "correct_for_drops": true
+          }
+        ]
+      }
+    }
+  },
+  "axe": {
+    "base": "minecraft:netherite_axe",
+    "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minecraft:base_attack_damage",
+          "amount": 10.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "id": "minecraft:base_attack_speed",
+          "amount": -3.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+        }
+      ],
+      "minecraft:max_damage": 2501,
+      "minecraft:tool": {
+        "rules": [
+          {
+            "blocks": "#endrite:incorrect_for_endrite_tool",
+            "correct_for_drops": false
+          },
+          {
+            "blocks": "#minecraft:mineable/axe",
+            "speed": 10.0,
+            "correct_for_drops": true
+          }
+        ]
+      }
+    }
+  },
+  "shovel": {
+    "base": "minecraft:netherite_shovel",
+    "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minecraft:base_attack_damage",
+          "amount": 6.5,
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "id": "minecraft:base_attack_speed",
+          "amount": -3.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+        }
+      ],
+      "minecraft:max_damage": 2501,
+      "minecraft:tool": {
+        "rules": [
+          {
+            "blocks": "#endrite:incorrect_for_endrite_tool",
+            "correct_for_drops": false
+          },
+          {
+            "blocks": "#minecraft:mineable/shovel",
+            "speed": 10.0,
+            "correct_for_drops": true
+          }
+        ]
+      }
+    }
+  },
+  "hoe": {
+    "base": "minecraft:netherite_hoe",
+    "components": {
+      "minecraft:max_damage": 2501,
+      "minecraft:tool": {
+        "rules": [
+          {
+            "blocks": "#endrite:incorrect_for_endrite_tool",
+            "correct_for_drops": false
+          },
+          {
+            "blocks": "#minecraft:mineable/hoe",
+            "speed": 10.0,
+            "correct_for_drops": true
+          }
+        ]
+      }
+    }
+  },
+  "spear": {
+    "base": "minecraft:netherite_spear",
+    "components": {
+      "minecraft:kinetic_weapon": {
+        "delay_ticks": 6,
+        "dismount_conditions": {
+          "max_duration_ticks": 40,
+          "min_speed": 6.5
+        },
+        "knockback_conditions": {
+          "max_duration_ticks": 90,
+          "min_speed": 5.1
+        },
+        "damage_conditions": {
+          "max_duration_ticks": 150,
+          "min_relative_speed": 4.6
+        },
+        "forward_movement": 0.38,
+        "damage_multiplier": 1.325,
+        "sound": "minecraft:item.spear.use",
+        "hit_sound": "minecraft:item.spear.hit"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minecraft:base_attack_damage",
+          "amount": 5.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "id": "minecraft:base_attack_speed",
+          "amount": -3.2,
+          "operation": "add_value",
+          "slot": "mainhand"
+        }
+      ],
+      "minecraft:max_damage": 2501,
+      "minecraft:swing_animation": {
+        "type": "stab",
+        "duration": 25
+      }
+    }
+  },
+  "helmet": {
+    "base": "minecraft:netherite_helmet",
+    "components": {
+      "minecraft:equippable": {
+        "slot": "head",
+        "equip_sound": "minecraft:item.armor.equip_netherite",
+        "asset_id": "endrite:endrite"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "minecraft:armor.helmet",
+          "amount": 3.0,
+          "operation": "add_value",
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "id": "minecraft:armor.helmet",
+          "amount": 4.0,
+          "operation": "add_value",
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "id": "minecraft:armor.helmet",
+          "amount": 0.1,
+          "operation": "add_value",
+          "slot": "head"
+        }
+      ],
+      "minecraft:max_damage": 462
+    }
+  },
+  "chestplate": {
+    "base": "minecraft:netherite_chestplate",
+    "components": {
+      "minecraft:equippable": {
+        "slot": "chest",
+        "equip_sound": "minecraft:item.armor.equip_netherite",
+        "asset_id": "endrite:endrite"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "minecraft:armor.chestplate",
+          "amount": 8.0,
+          "operation": "add_value",
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "id": "minecraft:armor.chestplate",
+          "amount": 4.0,
+          "operation": "add_value",
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "id": "minecraft:armor.chestplate",
+          "amount": 0.1,
+          "operation": "add_value",
+          "slot": "chest"
+        }
+      ],
+      "minecraft:max_damage": 672
+    }
+  },
+  "leggings": {
+    "base": "minecraft:netherite_leggings",
+    "components": {
+      "minecraft:equippable": {
+        "slot": "legs",
+        "equip_sound": "minecraft:item.armor.equip_netherite",
+        "asset_id": "endrite:endrite"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "minecraft:armor.leggings",
+          "amount": 6.0,
+          "operation": "add_value",
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "id": "minecraft:armor.leggings",
+          "amount": 4.0,
+          "operation": "add_value",
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "id": "minecraft:armor.leggings",
+          "amount": 0.1,
+          "operation": "add_value",
+          "slot": "legs"
+        }
+      ],
+      "minecraft:max_damage": 630
+    }
+  },
+  "boots": {
+    "base": "minecraft:netherite_boots",
+    "components": {
+      "minecraft:equippable": {
+        "slot": "feet",
+        "equip_sound": "minecraft:item.armor.equip_netherite",
+        "asset_id": "endrite:endrite"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "minecraft:armor.boots",
+          "amount": 3.0,
+          "operation": "add_value",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "id": "minecraft:armor.boots",
+          "amount": 4.0,
+          "operation": "add_value",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "id": "minecraft:armor.boots",
+          "amount": 0.1,
+          "operation": "add_value",
+          "slot": "feet"
+        }
+      ],
+      "minecraft:max_damage": 546
+    }
+  }
+}

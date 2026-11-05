@@ -1,0 +1,12 @@
+loot give @s loot endrite:item/raw_endrite
+loot give @s loot endrite:item/endrite_ingot
+loot give @s loot endrite:item/endrite_sword
+loot give @s loot endrite:item/endrite_pickaxe
+loot give @s loot endrite:item/endrite_axe
+loot give @s loot endrite:item/endrite_shovel
+loot give @s loot endrite:item/endrite_hoe
+loot give @s loot endrite:item/endrite_spear
+loot give @s loot endrite:item/endrite_helmet
+loot give @s loot endrite:item/endrite_chestplate
+loot give @s loot endrite:item/endrite_leggings
+loot give @s loot endrite:item/endrite_boots

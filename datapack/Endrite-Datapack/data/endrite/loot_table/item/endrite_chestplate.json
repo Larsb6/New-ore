@@ -1,0 +1,65 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_chestplate",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:equippable": {
+                  "slot": "chest",
+                  "equip_sound": "minecraft:item.armor.equip_netherite",
+                  "asset_id": "endrite:endrite"
+                },
+                "minecraft:attribute_modifiers": [
+                  {
+                    "type": "minecraft:armor",
+                    "id": "minecraft:armor.chestplate",
+                    "amount": 8.0,
+                    "operation": "add_value",
+                    "slot": "chest"
+                  },
+                  {
+                    "type": "minecraft:armor_toughness",
+                    "id": "minecraft:armor.chestplate",
+                    "amount": 4.0,
+                    "operation": "add_value",
+                    "slot": "chest"
+                  },
+                  {
+                    "type": "minecraft:knockback_resistance",
+                    "id": "minecraft:armor.chestplate",
+                    "amount": 0.1,
+                    "operation": "add_value",
+                    "slot": "chest"
+                  }
+                ],
+                "minecraft:max_damage": 672,
+                "minecraft:item_name": {
+                  "translate": "item.endrite.endrite_chestplate",
+                  "fallback": "Endrite Chestplate"
+                },
+                "minecraft:repairable": {
+                  "items": "minecraft:structure_block"
+                },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "endrite"
+                  ]
+                },
+                "minecraft:custom_data": {
+                  "endrite": "chestplate"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

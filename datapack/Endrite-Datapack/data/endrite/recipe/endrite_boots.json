@@ -1,0 +1,64 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": "minecraft:structure_block"
+  },
+  "pattern": [
+    "X X",
+    "X X"
+  ],
+  "result": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:equippable": {
+        "slot": "feet",
+        "equip_sound": "minecraft:item.armor.equip_netherite",
+        "asset_id": "endrite:endrite"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "minecraft:armor.boots",
+          "amount": 3.0,
+          "operation": "add_value",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "id": "minecraft:armor.boots",
+          "amount": 4.0,
+          "operation": "add_value",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "id": "minecraft:armor.boots",
+          "amount": 0.1,
+          "operation": "add_value",
+          "slot": "feet"
+        }
+      ],
+      "minecraft:max_damage": 546,
+      "minecraft:item_name": {
+        "translate": "item.endrite.endrite_boots",
+        "fallback": "Endrite Boots"
+      },
+      "minecraft:repairable": {
+        "items": "minecraft:structure_block"
+      },
+      "minecraft:custom_model_data": {
+        "strings": [
+          "endrite"
+        ]
+      },
+      "minecraft:custom_data": {
+        "endrite": "boots"
+      },
+      "minecraft:enchantments": {
+        "endrite:double_jump": 1
+      }
+    }
+  }
+}

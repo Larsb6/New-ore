@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": "minecraft:structure_block",
+    "#": "minecraft:stick"
+  },
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "result": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minecraft:base_attack_damage",
+          "amount": 8.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "id": "minecraft:base_attack_speed",
+          "amount": -2.4,
+          "operation": "add_value",
+          "slot": "mainhand"
+        }
+      ],
+      "minecraft:max_damage": 2501,
+      "minecraft:item_name": {
+        "translate": "item.endrite.endrite_sword",
+        "fallback": "Endrite Sword"
+      },
+      "minecraft:repairable": {
+        "items": "minecraft:structure_block"
+      },
+      "minecraft:custom_model_data": {
+        "strings": [
+          "endrite"
+        ]
+      },
+      "minecraft:custom_data": {
+        "endrite": "sword"
+      }
+    }
+  }
+}

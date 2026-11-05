@@ -1,0 +1,171 @@
+{
+  "description": {
+    "translate": "enchantment.endrite.double_jump",
+    "fallback": "Double Jump"
+  },
+  "supported_items": "minecraft:netherite_boots",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 100,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 100,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 1,
+  "slots": [
+    "feet"
+  ],
+  "effects": {
+    "minecraft:tick": [
+      {
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "endrite.dj": 1
+              }
+            },
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "minecraft:player",
+                  "input": {
+                    "jump": true
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:any_of",
+                "terms": [
+                  {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "flags": {
+                        "is_on_ground": true
+                      }
+                    }
+                  },
+                  {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "flags": {
+                        "is_in_water": true
+                      }
+                    }
+                  },
+                  {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "flags": {
+                        "is_flying": true
+                      }
+                    }
+                  },
+                  {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "vehicle": {}
+                    }
+                  },
+                  {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "location": {
+                        "block": {
+                          "blocks": "#minecraft:climbable"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "equipment": {
+                  "head": {
+                    "items": "minecraft:netherite_helmet",
+                    "predicates": {
+                      "minecraft:custom_data": {
+                        "endrite": "helmet"
+                      }
+                    }
+                  },
+                  "chest": {
+                    "items": "minecraft:netherite_chestplate",
+                    "predicates": {
+                      "minecraft:custom_data": {
+                        "endrite": "chestplate"
+                      }
+                    }
+                  },
+                  "legs": {
+                    "items": "minecraft:netherite_leggings",
+                    "predicates": {
+                      "minecraft:custom_data": {
+                        "endrite": "leggings"
+                      }
+                    }
+                  },
+                  "feet": {
+                    "items": "minecraft:netherite_boots",
+                    "predicates": {
+                      "minecraft:custom_data": {
+                        "endrite": "boots"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:explode",
+              "block_interaction": "none",
+              "radius": 1.5,
+              "offset": [
+                0,
+                -0.5,
+                0
+              ],
+              "knockback_multiplier": 0.73,
+              "small_particle": {
+                "type": "minecraft:reverse_portal"
+              },
+              "large_particle": {
+                "type": "minecraft:reverse_portal"
+              },
+              "sound": "minecraft:entity.enderman.teleport"
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "endrite:double_jump/used"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
