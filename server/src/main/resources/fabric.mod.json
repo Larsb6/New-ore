@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "endrite",
+  "version": "${version}",
+  "name": "Endrite (Server-side)",
+  "description": "Server-side version of Endrite: vanilla clients can join, textures are sent automatically as a resource pack.",
+  "authors": [
+    "larsb6"
+  ],
+  "icon": "assets/endrite/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "preLaunch": [
+      "com.larsb6.endrite.server.AutoHostDefaults"
+    ],
+    "main": [
+      "com.larsb6.endrite.server.EndriteServer"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

@@ -53,7 +53,7 @@ public final class ModBlocks {
 		return block;
 	}
 
-	static void initialize() {
+	public static void initialize() {
 	}
 
 	private ModBlocks() {

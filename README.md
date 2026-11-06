@@ -50,6 +50,18 @@ Wer **alle vier Endrit-Rüstungsteile** trägt, kann in der Luft ein zweites Mal
 
 Die Mod muss dafür auf **Client und Server** installiert sein.
 
+## Server-Version (Vanilla-Clients)
+
+`server/` baut eine **rein serverseitige** Variante: Sie kommt auf einen Fabric-Server, und Spieler können mit einem **normalen Vanilla-Minecraft 1.21.11** beitreten – ohne Fabric, ohne Mod.
+
+- Inhalt und Werte sind identisch mit der Mod (gleicher Code, gleiche Block-/Item-IDs): eigenes Endriterz, Endrit-/Rohendritblock, alle Werkzeuge, Waffen, Rüstung, Doppelsprung.
+- Technisch läuft das über [Polymer](https://github.com/Patbox/polymer) (ist in der jar enthalten): Clients sehen Vanilla-Items/-Blöcke, die über ein **automatisch gesendetes Resource Pack** wie Endrit aussehen.
+- Installation: `endrite-server-1.0.0.jar` + **Fabric API** in den `mods`-Ordner des Fabric-Servers. Beim ersten Start wird `config/polymer/auto-host.json` angelegt, sodass der Server das Resource Pack selbst über seinen normalen Port ausliefert und **verlangt** (sonst sähen Endrit-Blöcke wie Notenblöcke aus). Wer das nicht will, setzt dort `"require": false`.
+- Nur für dedizierte Server. Im Einzelspieler die normale Mod benutzen; Server-Variante und normale Mod nicht gleichzeitig installieren.
+- Der Doppelsprung wird komplett vom Server gesteuert (er liest die Sprungtaste aus den Eingabe-Paketen des Clients). Bei hohem Ping reagiert er entsprechend verzögert.
+
+Bauen: `./gradlew -p server build` → `server/build/libs/endrite-server-1.0.0.jar`.
+
 ## Datapack-Version
 
 Unter `datapack/dist/` gibt es Endrit zusätzlich als **Datapack + Resource Pack** (ohne Fabric). Datapacks können keine neuen Blöcke oder Items hinzufügen, deshalb baut diese Version auf Vanilla-Objekten auf:

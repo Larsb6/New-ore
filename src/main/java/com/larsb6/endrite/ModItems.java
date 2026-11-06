@@ -55,7 +55,7 @@ public final class ModItems {
 		return Registry.register(Registries.ITEM, key, factory.apply(settings.registryKey(key)));
 	}
 
-	static void initialize() {
+	public static void initialize() {
 	}
 
 	private ModItems() {
