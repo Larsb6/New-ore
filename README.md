@@ -59,6 +59,7 @@ Die Mod muss dafür auf **Client und Server** installiert sein.
 - Installation: `endrite-server-1.0.0.jar` + **Fabric API** in den `mods`-Ordner des Fabric-Servers. Beim ersten Start wird `config/polymer/auto-host.json` angelegt, sodass der Server das Resource Pack selbst über seinen normalen Port ausliefert und **verlangt** (sonst sähen Endrit-Blöcke wie Notenblöcke aus). Wer das nicht will, setzt dort `"require": false`.
 - Nur für dedizierte Server. Im Einzelspieler die normale Mod benutzen; Server-Variante und normale Mod nicht gleichzeitig installieren.
 - Der Doppelsprung wird komplett vom Server gesteuert (er liest die Sprungtaste aus den Eingabe-Paketen des Clients). Bei hohem Ping reagiert er entsprechend verzögert.
+- Die Stärke des Doppelsprungs steht in `config/endrite.json` (`double_jump_strength`, Standard `1.75`). Das ist ein Faktor auf die normale Sprungkraft: `1.0` = +1,25 Blöcke (wie die Mod), `1.5` = +2,6, `1.75` = +3,4, `2.0` = +4,3. Nach dem Ändern den Server neu starten.
 
 Bauen: `./gradlew -p server build` → `server/build/libs/endrite-server-1.0.0.jar`.
 
