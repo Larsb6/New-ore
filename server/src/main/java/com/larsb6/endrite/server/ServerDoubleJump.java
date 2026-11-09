@@ -28,7 +28,7 @@ import net.minecraft.util.math.Vec3d;
  * jump key released and pressed again in mid-air, once per airtime, fall distance reset.
  * Its strength is set in config/endrite.json.
  */
-final class ServerDoubleJump {
+public final class ServerDoubleJump {
 	private enum State { GROUNDED, READY, USED }
 
 	/** Contents of config/endrite.json. */
@@ -40,6 +40,15 @@ final class ServerDoubleJump {
 	private static final Map<UUID, State> STATES = new HashMap<>();
 	/** Height at which each player pressed the double jump; fall damage counts from there. */
 	private static final Map<UUID, Double> LAUNCH_Y = new HashMap<>();
+	/** Highest point reached after the double jump. */
+	private static final Map<UUID, Double> APEX_Y = new HashMap<>();
+	/** Consecutive ticks on the ground, used to drop LAUNCH_Y/APEX_Y once a landing caused no fall damage. */
+	private static final Map<UUID, Integer> GROUNDED_TICKS = new HashMap<>();
+	/**
+	 * The server may already consider a player grounded a packet before the landing that applies fall
+	 * damage, so the double jump heights are kept for a short while after touching the ground.
+	 */
+	private static final int KEEP_AFTER_LANDING_TICKS = 10;
 	private static double strength;
 
 	static void register() {
@@ -51,7 +60,7 @@ final class ServerDoubleJump {
 		});
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
 			STATES.remove(handler.player.getUuid());
-			LAUNCH_Y.remove(handler.player.getUuid());
+			forgetJump(handler.player.getUuid());
 		});
 	}
 
@@ -59,16 +68,14 @@ final class ServerDoubleJump {
 		if (player.isOnGround() || player.isClimbing() || player.isTouchingWater() || player.hasVehicle()
 			|| player.getAbilities().flying || player.isGliding()) {
 			STATES.remove(player.getUuid());
-			LAUNCH_Y.remove(player.getUuid());
+			if (GROUNDED_TICKS.merge(player.getUuid(), 1, Integer::sum) >= KEEP_AFTER_LANDING_TICKS) {
+				forgetJump(player.getUuid());
+			}
 			return;
 		}
 
-		// After a double jump only the drop below the launch height counts as falling, so the extra
-		// height a strong double jump adds never causes fall damage on its own.
-		Double launchY = LAUNCH_Y.get(player.getUuid());
-		if (launchY != null) {
-			player.fallDistance = Math.max(0.0, launchY - player.getY());
-		}
+		GROUNDED_TICKS.remove(player.getUuid());
+		APEX_Y.computeIfPresent(player.getUuid(), (uuid, apex) -> Math.max(apex, player.getY()));
 
 		boolean jumpPressed = player.getPlayerInput().jump();
 		State state = STATES.getOrDefault(player.getUuid(), State.GROUNDED);
@@ -91,10 +98,32 @@ final class ServerDoubleJump {
 		player.networkHandler.sendPacket(new EntityVelocityUpdateS2CPacket(player));
 		player.onLanding();
 		LAUNCH_Y.put(player.getUuid(), player.getY());
+		APEX_Y.put(player.getUuid(), player.getY());
 
 		ServerWorld world = player.getEntityWorld();
 		world.spawnParticles(ParticleTypes.REVERSE_PORTAL, player.getX(), player.getY(), player.getZ(), 20, 0.3, 0.05, 0.3, 0.05);
 		world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.4F, 1.6F);
+	}
+
+	/**
+	 * Fall damage after a double jump counts from the height where it was pressed, so the extra height
+	 * of a strong double jump never hurts on its own. The real fall distance is left untouched, because
+	 * other mechanics such as the mace smash depend on it; only the damage calculation is adjusted.
+	 */
+	public static double adjustFallDistance(ServerPlayerEntity player, double fallDistance) {
+		Double launchY = LAUNCH_Y.get(player.getUuid());
+		Double apexY = APEX_Y.get(player.getUuid());
+		if (launchY == null || apexY == null) {
+			return fallDistance;
+		}
+		forgetJump(player.getUuid());
+		return Math.max(0.0, fallDistance - Math.max(0.0, apexY - launchY));
+	}
+
+	private static void forgetJump(UUID uuid) {
+		LAUNCH_Y.remove(uuid);
+		APEX_Y.remove(uuid);
+		GROUNDED_TICKS.remove(uuid);
 	}
 
 	private static Config loadConfig() {

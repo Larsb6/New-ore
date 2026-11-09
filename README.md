@@ -60,6 +60,7 @@ Die Mod muss dafür auf **Client und Server** installiert sein.
 - Nur für dedizierte Server. Im Einzelspieler die normale Mod benutzen; Server-Variante und normale Mod nicht gleichzeitig installieren.
 - Der Doppelsprung wird komplett vom Server gesteuert (er liest die Sprungtaste aus den Eingabe-Paketen des Clients). Bei hohem Ping reagiert er entsprechend verzögert.
 - Die Stärke des Doppelsprungs steht in `config/endrite.json` (`double_jump_strength`, Standard `1.75`). Das ist ein Faktor auf die normale Sprungkraft: `1.0` = +1,25 Blöcke (wie die Mod), `1.5` = +2,6, `1.75` = +3,4, `2.0` = +4,3. Nach dem Ändern den Server neu starten.
+- Fallschaden nach einem Doppelsprung zählt erst ab der Höhe, in der er gedrückt wurde – die zusätzliche Sprunghöhe tut also nicht weh. Die echte Fallhöhe bleibt dabei erhalten, sodass der **Streitkolben** (Mace) nach einem Doppelsprung normal zuschlägt; je höher der Sprung, desto stärker der Schlag.
 
 Bauen: `./gradlew -p server build` → `server/build/libs/endrite-server-1.0.0.jar`.
 
