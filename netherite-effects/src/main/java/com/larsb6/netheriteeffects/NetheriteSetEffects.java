@@ -7,10 +7,14 @@ import java.util.UUID;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -37,10 +41,10 @@ public class NetheriteSetEffects implements ModInitializer {
 	}
 
 	private static void update(ServerPlayerEntity player) {
-		boolean fullSet = player.getEquippedStack(EquipmentSlot.HEAD).isOf(Items.NETHERITE_HELMET)
-			&& player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.NETHERITE_CHESTPLATE)
-			&& player.getEquippedStack(EquipmentSlot.LEGS).isOf(Items.NETHERITE_LEGGINGS)
-			&& player.getEquippedStack(EquipmentSlot.FEET).isOf(Items.NETHERITE_BOOTS);
+		boolean fullSet = isNetherite(player, EquipmentSlot.HEAD, Items.NETHERITE_HELMET)
+			&& isNetherite(player, EquipmentSlot.CHEST, Items.NETHERITE_CHESTPLATE)
+			&& isNetherite(player, EquipmentSlot.LEGS, Items.NETHERITE_LEGGINGS)
+			&& isNetherite(player, EquipmentSlot.FEET, Items.NETHERITE_BOOTS);
 		boolean wasWearing = fullSet ? !WEARING.add(player.getUuid()) : WEARING.remove(player.getUuid());
 
 		for (RegistryEntry<StatusEffect> effect : EFFECTS) {
@@ -62,6 +66,16 @@ public class NetheriteSetEffects implements ModInitializer {
 					current.isAmbient(), current.shouldShowParticles(), current.shouldShowIcon()));
 			}
 		}
+	}
+
+	/**
+	 * Real netherite only. The Endrite datapack builds its armor on netherite items marked with
+	 * custom_data {endrite: ...}; those pieces must not count. (The Endrite mods use their own items.)
+	 */
+	private static boolean isNetherite(ServerPlayerEntity player, EquipmentSlot slot, Item item) {
+		ItemStack stack = player.getEquippedStack(slot);
+		NbtComponent customData = stack.get(DataComponentTypes.CUSTOM_DATA);
+		return stack.isOf(item) && (customData == null || !customData.copyNbt().contains("endrite"));
 	}
 
 	private static boolean isFromSet(StatusEffectInstance effect) {

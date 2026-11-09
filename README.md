@@ -100,6 +100,7 @@ Die fertige Mod liegt danach in `build/libs/endrite-<version>.jar` (benötigt Fa
 
 - Spieler brauchen keinen Mod (Vanilla-Clients können beitreten). Funktioniert auf dedizierten Servern und im Einzelspieler.
 - Installation: `netherite-set-effects-1.0.0.jar` + **Fabric API** in den `mods`-Ordner.
+- **Endrit-Rüstung zählt nicht**, egal ob aus der Mod, der Server-Version oder dem Datapack (dort ist sie technisch Netherit mit Endrit-Markierung und wird ausdrücklich ausgeschlossen).
 - Effekte aus Tränken oder Leuchtfeuern werden nicht entfernt; ist schon ein (stärkerer) Effekt aktiv, übernimmt das Set erst, wenn dieser ausläuft.
 
 Bauen: `./gradlew -p netherite-effects build`.
