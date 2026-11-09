@@ -91,3 +91,15 @@ Neu erzeugen: `python3 tools/make_datapack.py <entpackter Minecraft-1.21.11-Clie
 ```
 
 Die fertige Mod liegt danach in `build/libs/endrite-<version>.jar` (benötigt Fabric Loader und Fabric API).
+
+---
+
+# Netherite Set Effects (separate Mod)
+
+`netherite-effects/` ist ein eigener, kleiner **serverseitiger** Fabric-Mod (unabhängig von Endrit): Wer ein **komplettes Netherit-Rüstungsset** trägt, bekommt unendlich **Feuerresistenz** und **Resistenz I**. Sobald ein Teil fehlt, verschwinden beide Effekte sofort (es wird jeden Tick geprüft).
+
+- Spieler brauchen keinen Mod (Vanilla-Clients können beitreten). Funktioniert auf dedizierten Servern und im Einzelspieler.
+- Installation: `netherite-set-effects-1.0.0.jar` + **Fabric API** in den `mods`-Ordner.
+- Effekte aus Tränken oder Leuchtfeuern werden nicht entfernt; ist schon ein (stärkerer) Effekt aktiv, übernimmt das Set erst, wenn dieser ausläuft.
+
+Bauen: `./gradlew -p netherite-effects build`.

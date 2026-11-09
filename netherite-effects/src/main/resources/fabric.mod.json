@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "netherite_set_effects",
+  "version": "${version}",
+  "name": "Netherite Set Effects",
+  "description": "Server-side: wearing a full netherite armor set gives infinite Fire Resistance and Resistance I. Vanilla clients can join.",
+  "authors": [
+    "larsb6"
+  ],
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.larsb6.netheriteeffects.NetheriteSetEffects"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
